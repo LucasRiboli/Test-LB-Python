@@ -11,6 +11,7 @@ class LBHandler(http.server.BaseHTTPRequestHandler):
         ]
         
         chosen_instance = random.choice(instances)
+        self.send_response(302)
         self.send_header("Location", chosen_instance + self.path)
         self.end_headers()
 
